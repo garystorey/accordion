@@ -1,4 +1,11 @@
-accordion
+Accordion
 =========
 
-An Accordion/Tab jquery plugin
+An Accordion/Tab jquery plugin with many options
+
+Documentation
+==============
+
+Coming soon....
+
+
