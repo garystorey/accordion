@@ -2,7 +2,7 @@ var Accordion = function( $elm, options ) {
 
   this.debug = false;
   this.$el = $elm;
-  this.options = jQuery.extend( true, {}, $.fn.accordion.defaults, options );
+  this.options = jQuery.extend( true, {}, jQuery.fn.accordion.defaults, options );
 
   this.$headers = this.$el.find( '.' + this.options.headerClass );
   this.$parents = this.$headers.parent();  
@@ -42,7 +42,7 @@ Accordion.prototype = {
 
   clickHandler : function( event ) {
 
-    var $el = $( event.target ),
+    var $el = jQuery( event.target ),
         $p = $el.parent(),
         obj = event.data,
         opts = obj.options;
@@ -100,10 +100,10 @@ Accordion.prototype = {
     var expand, collapse;
     if ( this.options.showCollapseAndExpand ) {
       this.log('Adding Expand All Button...');
-      expand = $('<span/>', {'class' : this.options.collapseAndExpand.expandAllClass, 'text': this.options.collapseAndExpand.expandAllText});
+      expand = jQuery('<span/>', {'class' : this.options.collapseAndExpand.expandAllClass, 'text': this.options.collapseAndExpand.expandAllText});
       this.log('Add Collpase All button?');
       this.log(( !this.options.collapseAndExpand.showAsOneButton )? 'No.' : 'Yes.');
-      collapse = ( !this.options.collapseAndExpand.showAsOneButton ) ? $('<span/>', {'class' : this.options.collapseAndExpand.collapseAllClass, 'text': this.options.collapseAndExpand.collapseAllText}) : '';
+      collapse = ( !this.options.collapseAndExpand.showAsOneButton ) ? jQuery('<span/>', {'class' : this.options.collapseAndExpand.collapseAllClass, 'text': this.options.collapseAndExpand.collapseAllText}) : '';
       $(this.$el).prepend( expand, collapse ); 
     }
     expand=null; collapse=null;
@@ -131,7 +131,7 @@ jQuery.fn.accordion = function( options ){
       obj.init();
     });
   } else {
-    Accordion = $(this).data('Accordion');
+    Accordion = jQuery(this).data('Accordion');
     if (Accordion !== null) {
       switch(options) {
         case "init":
