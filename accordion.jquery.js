@@ -148,6 +148,7 @@ jQuery.fn.accordion = function( options ){
   }
 };
 
+
 jQuery.fn.accordion.defaults = {
 
   headerClass : 'accordion-header',
